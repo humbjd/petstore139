@@ -1166,9 +1166,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\petstore139.csproj",
-      "projectName": "petstore139",
-      "projectPath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\petstore139.csproj",
+      "projectUniqueName": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\PetStore139.csproj",
+      "projectName": "PetStore139",
+      "projectPath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\PetStore139.csproj",
       "packagesPath": "C:\\Users\\hjdan\\.nuget\\packages\\",
       "outputPath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\obj\\",
       "projectStyle": "PackageReference",
@@ -1238,7 +1238,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2\\RuntimeIdentifierGraph.json"
       }
     }
   }
