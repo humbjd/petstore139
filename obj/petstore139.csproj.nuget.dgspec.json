@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\petstore139.csproj": {}
+    "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\PetStore139.csproj": {}
   },
   "projects": {
-    "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\petstore139.csproj": {
+    "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\PetStore139.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\petstore139.csproj",
-        "projectName": "petstore139",
-        "projectPath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\petstore139.csproj",
+        "projectUniqueName": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\PetStore139.csproj",
+        "projectName": "PetStore139",
+        "projectPath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\PetStore139.csproj",
         "packagesPath": "C:\\Users\\hjdan\\.nuget\\packages\\",
         "outputPath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\obj\\",
         "projectStyle": "PackageReference",

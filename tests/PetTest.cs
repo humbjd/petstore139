@@ -23,7 +23,7 @@ public class PetTest
         var request = new RestRequest("pet", Method.Post);
 
         // Armazena o conteudo do arquivo pet.json na memoria
-        String jsonBody = File.ReadAllText(@"D:\ESTUDO\ITERASYS\FTS139\petstore139\fixtures\pet1.json")
+        String jsonBody = File.ReadAllText(@"D:\ESTUDO\ITERASYS\FTS139\petstore139\fixtures\pet1.json");
         // Adiciona na requisição o conteudo do arquivo pet1.json
         request.AddBody(jsonBody);
         // Executa

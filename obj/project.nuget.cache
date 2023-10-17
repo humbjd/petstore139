@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OrFXPote77hLGOSygO+Z+itfz1PFxUb3Le9mRydm9wXESAZd9h//750GefvmENlwJOwxumAV9zPC/thW0rq9xw==",
+  "dgSpecHash": "AcZlVFvXbNROJr/ymWkfAlbOMUOGHeQ/CuIY8y7mQK8c2/9CjbbsY09wS3ksxhwfoFAWAE4PTGXC2+qOHGATDw==",
   "success": true,
-  "projectFilePath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\petstore139.csproj",
+  "projectFilePath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\PetStore139.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hjdan\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\hjdan\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",
