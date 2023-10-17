@@ -1,0 +1,5 @@
+D:\ESTUDO\ITERASYS\FTS139\petstore139\obj\Debug\net7.0\petstore139.csproj.AssemblyReference.cache
+D:\ESTUDO\ITERASYS\FTS139\petstore139\obj\Debug\net7.0\petstore139.GeneratedMSBuildEditorConfig.editorconfig
+D:\ESTUDO\ITERASYS\FTS139\petstore139\obj\Debug\net7.0\petstore139.AssemblyInfoInputs.cache
+D:\ESTUDO\ITERASYS\FTS139\petstore139\obj\Debug\net7.0\petstore139.AssemblyInfo.cs
+D:\ESTUDO\ITERASYS\FTS139\petstore139\obj\Debug\net7.0\petstore139.csproj.CoreCompileInputs.cache
