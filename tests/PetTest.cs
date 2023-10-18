@@ -50,4 +50,31 @@ public class PetTest
         string status = responseBody.status;
         Assert.That(status, Is.EqualTo("available")); 
     }
+
+    [Test, Order(2)]
+    public void GetPetTest()
+    {
+        // Configura
+        int petId = 3048454;            // Campo de pesquisa
+        String petName = "Lagertha";    // Resultado esperado
+        String categoryName = "cat";
+        String tagsName = "vacinado";
+        var client = new RestClient(BASE_URL);
+        var request = new RestRequest($"pet/{petId}", Method.Get);
+        //var request = RestRequest("pet/" + petId, Method.Get); // Outra forma de fazer com concatenação
+
+        // Executa
+        var response = client.Execute(request);
+
+        // Valida
+        var responseBody = JsonConvert.DeserializeObject<dynamic>(response.Content);
+        Console.WriteLine(responseBody);
+
+        Assert.That((int)response.StatusCode, Is.EqualTo(200));
+        Assert.That((int)responseBody.id, Is.EqualTo(petId));
+        Assert.That((String)responseBody.name, Is.EqualTo(petName));
+        Assert.That((String)responseBody.category.name, Is.EqualTo(categoryName));
+        Assert.That((String)responseBody.tags[0].name, Is.EqualTo(tagsName));
+    }
+
 }    
