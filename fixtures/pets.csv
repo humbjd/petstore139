@@ -1,1 +1,3 @@
 petId,categoryId,categoryName,petName,photoUrls,tagsIds,tagsNames,status
+3048454,2,cat,Lagertha,,1;2,vacinado;castrado,available
+3048455,1,dog,Max,,1;3,vacinado;fermifugado,available
