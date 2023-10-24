@@ -41,15 +41,25 @@ public class PetTest
         // Valide que na resposta o status code é igual ao resultado esperado (200)
         Assert.That((int)response.StatusCode, Is.EqualTo(200));
 
+        // Valida o petId
+        int petId = responseBody.id;
+        Assert.That(petId, Is.EqualTo(3048454));
+
+
         // Valida o nome do animal na resposta
         String name = responseBody.name.ToString();
         Assert.That(name, Is.EqualTo("Lagertha"));
         // OU
         // Assert.That(responseBody.name.ToString(), Is.EqualTo("Lagertha"));
 
+        
         // Valida o status do animal na resposta
         string status = responseBody.status;
         Assert.That(status, Is.EqualTo("available")); 
+
+        // Armazenar os dados obtidos para usar nos proximos testes
+        Environment.SetEnvironmentVariable("petId", petId.ToString());
+
     }
 
     [Test, Order(2)]
@@ -114,6 +124,26 @@ public class PetTest
         Assert.That((String)responseBody.status, Is.EqualTo(petModel.status));
 
     }
+    [Test, Order(4)]
+    public void DeletePetTest()
+    {
+        // Configura
+        String petId = Environment.GetEnvironmentVariable("petId");
+        var client = new RestClient(BASE_URL);
+        var request = new RestRequest($"pet/{petId}", Method.Delete);
+        
+        // Executa
+        var response = client.Execute(request);
+        
+        // Valida
+        var responseBody = JsonConvert.DeserializeObject<dynamic>(response.Content);
 
+
+        Assert.That((int)response.StatusCode, Is.EqualTo(200));
+        Assert.That((int)responseBody.code, Is.EqualTo(200));
+        Assert.That((String)responseBody.message, Is.EqualTo(petId));
+        
+
+    }    
 
 }    
