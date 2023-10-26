@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fu5XRmFDnWvQ1faI9dgReY4Fn3T26UindBDb6g2+tXLO2b3ABuZbQR/GygmnWJ70TxWR4JvQhD+4GfUU4gP8nQ==",
+  "dgSpecHash": "3IrXEYKyXy0xtXjIEeU7m6OBLZESMQqciLBy+40K4SCLopiIoYeptbmcxqE021AcxMD+qP/mGPGo9xNp+m0FkQ==",
   "success": true,
   "projectFilePath": "D:\\ESTUDO\\ITERASYS\\FTS139\\petstore139\\PetStore139.csproj",
   "expectedPackageFiles": [
@@ -19,7 +19,10 @@
     "C:\\Users\\hjdan\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\hjdan\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
     "C:\\Users\\hjdan\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\hjdan\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+    "C:\\Users\\hjdan\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512",
+    "C:\\Users\\hjdan\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.12\\microsoft.netcore.app.ref.7.0.12.nupkg.sha512",
+    "C:\\Users\\hjdan\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.12\\microsoft.windowsdesktop.app.ref.7.0.12.nupkg.sha512",
+    "C:\\Users\\hjdan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.12\\microsoft.aspnetcore.app.ref.7.0.12.nupkg.sha512"
   ],
   "logs": []
 }

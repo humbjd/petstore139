@@ -11,6 +11,7 @@ public class PetTest
     // Endereço da API
     private const string BASE_URL = "https://petstore.swagger.io/v2/";
 
+    // public String token; // Seria uma forma de fazer
 
     // 3.2 - Funções e Métodos
 
@@ -27,7 +28,7 @@ public class PetTest
         while (!reader.EndOfStream)
         {
             var line = reader.ReadLine();
-            var values = line.Split(", ");
+            var values = line.Split(",");
 
             yield return new TestCaseData(int.Parse(values[0]), int.Parse(values[1]), values[2], values[3], values[4], values[5], values[6], values[7]);
         }
@@ -185,9 +186,28 @@ public class PetTest
         petModel.category = new Category(categoryId, categoryName);
         petModel.name = petName;
         petModel.photoUrls = new String[]{photoUrls};
-        petModel.tags = new Tag[]{new Tag(1, "vacinado"), 
-                                  new Tag(2, "castrado")};
+
+
+        // Codigo para gerar as multiplas tags que o pet pode ter
+        String[] tagsIdsList = tagsIds.Split(";"); // Ler
+        String[] tagsNameList = tagsName.Split(";"); // Ler
+        List<Tag> tagList = new List<Tag>(); // Gravar depois do for
+
+        for (int i = 0; i < tagsIdsList.Length; i++)
+        {
+            int tagId = int.Parse(tagsIdsList[i]);
+            String tagName = tagsNameList[i];
+
+            Tag tag = new Tag(tagId, tagName);
+            tagList.Add(tag);
+        }
+
+        petModel.tags = tagList.ToArray();
         petModel.status = status;
+
+        // Estrutura de dados pronta, agora vamos serializar
+        String jsonBody = JsonConvert.SerializeObject(petModel, Formatting.Indented);
+        Console.WriteLine(jsonBody);
 
 
         // Instancia o objeto do tipo RestClient com o endereço da API
@@ -197,7 +217,8 @@ public class PetTest
         var request = new RestRequest("pet", Method.Post);
 
         // Armazena o conteudo do arquivo pet.json na memoria
-        String jsonBody = File.ReadAllText(@"D:\ESTUDO\ITERASYS\FTS139\petstore139\fixtures\pet1.json");
+        //String jsonBody = File.ReadAllText(@"D:\ESTUDO\ITERASYS\FTS139\petstore139\fixtures\pet1.json");
+
         // Adiciona na requisição o conteudo do arquivo pet1.json
         request.AddBody(jsonBody);
         // Executa
@@ -216,24 +237,48 @@ public class PetTest
 
         // Valida o petId
         //int petId = responseBody.id;
-        Assert.That(petId, Is.EqualTo(3048454));
+        Assert.That((int) responseBody.id, Is.EqualTo(petId));
 
 
         // Valida o nome do animal na resposta
-        String name = responseBody.name.ToString();
-        Assert.That(name, Is.EqualTo("Lagertha"));
+        //String name = responseBody.name.ToString();
+        Assert.That((String)responseBody.name, Is.EqualTo(petName));
         // OU
         // Assert.That(responseBody.name.ToString(), Is.EqualTo("Lagertha"));
 
         
         // Valida o status do animal na resposta
         //string status = responseBody.status;
-        Assert.That(status, Is.EqualTo("available")); 
+        Assert.That((String)responseBody.status, Is.EqualTo(status)); 
 
         // Armazenar os dados obtidos para usar nos proximos testes
-        Environment.SetEnvironmentVariable("petId", petId.ToString());
+        //Environment.SetEnvironmentVariable("petId", petId.ToString());
 
     }
 
+    [Test, Order(6)]
+    public void GetUserLoginTest()
+    {
+        // Configura
+        String username = "BatmaN";
+        String password = "teste01";
 
+        var client = new RestClient(BASE_URL);
+        var request = new RestRequest($"user/login?username={username}password={password}", Method.Get);
+        // Executa
+        var response = client.Execute(request);
+
+        // Valida
+        var responseBody = JsonConvert.DeserializeObject<dynamic>(response.Content);
+
+        Assert.That((int)response.StatusCode, Is.EqualTo(200));
+        Assert.That((int)responseBody.code, Is.EqualTo(200));
+        String message = responseBody.message;
+        String token = message.Substring(message.LastIndexOf(":")+1);
+        Console.WriteLine($"Token = {token}");
+
+        Environment.SetEnvironmentVariable("token", token);
+        
+
+    }
 }    
